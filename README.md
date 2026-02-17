@@ -1,4 +1,12 @@
 # AuthX – Authentication & Authorization Service
+![Python](https://img.shields.io/badge/Python-3.11-blue)
+![FastAPI](https://img.shields.io/badge/FastAPI-0.129.0-green)
+![PostgreSQL](https://img.shields.io/badge/PostgreSQL-Database-blue)
+![License](https://img.shields.io/badge/License-MIT-yellow)
+
+AuthX is a secure authentication backend built using FastAPI and PostgreSQL.  
+It provides user registration, login, password hashing, and JWT-based authentication using a clean and modular architecture.
+
 
 AuthX is a secure authentication backend built using FastAPI and PostgreSQL.  
 It provides user registration, login, password hashing, and JWT-based authentication using a clean and modular architecture.
