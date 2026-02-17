@@ -60,7 +60,7 @@ authx/
 ### 1. Clone the repository
 
 ```
-git clone https://github.com/YOUR_USERNAME/authx-authentication-service.git
+git clone https://github.com/venkatasainivas/authx-authentication-service.git
 cd authx-authentication-service
 ```
 
@@ -85,7 +85,7 @@ pip install -r requirements.txt
 ### 5. Create a `.env` file in the root directory
 
 ```
-DATABASE_URL=postgresql://username:password@localhost:5432/authx_db
+DATABASE_URL=postgresql://sainivas:password@localhost:5432/authx_db
 SECRET_KEY=your_secret_key
 ALGORITHM=HS256
 ACCESS_TOKEN_EXPIRE_MINUTES=30
