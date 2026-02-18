@@ -17,9 +17,9 @@ from app.core.security import (
 router = APIRouter(prefix="/auth", tags=["Authentication"])
 
 
-# ==============================
-# REGISTER
-# ==============================
+
+# registration
+
 @router.post("/register", response_model=UserResponse)
 def register(user: UserCreate, db: Session = Depends(get_db)):
 
@@ -44,16 +44,16 @@ def register(user: UserCreate, db: Session = Depends(get_db)):
     return new_user
 
 
-# ==============================
-# LOGIN (OAuth2 Form)
-# ==============================
+
+# login (OAuth2 Form)
+
 @router.post("/login")
 def login(
     form_data: OAuth2PasswordRequestForm = Depends(),
     db: Session = Depends(get_db)
 ):
 
-    # Find user by email (username field carries email)
+    # Find user by email
     db_user = db.query(User).filter(User.email == form_data.username).first()
 
     if not db_user:
@@ -63,7 +63,7 @@ def login(
     if not verify_password(form_data.password, db_user.hashed_password):
         raise HTTPException(status_code=400, detail="Invalid credentials")
 
-    # Create JWT token
+    # JWT token creation
     access_token = create_access_token(data={"sub": db_user.email})
     refresh_token = create_refresh_token(data={"sub": db_user.email})
     return {
@@ -73,9 +73,8 @@ def login(
 }
 
 
-# ==============================
-# PROTECTED ROUTE
-# ==============================
+# Protected route
+
 @router.get("/users/me")
 def read_users_me(current_user: User = Depends(get_current_user)):
 
