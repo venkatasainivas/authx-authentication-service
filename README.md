@@ -63,7 +63,7 @@ authx/
 ## ⚙️ Setup
 
 1. Clone repository  
-git clone https://github.com/YOUR_USERNAME/authx-authentication-service.git  
+git clone https://github.com/venkatasainivas/authx-authentication-service.git  
 cd authx-authentication-service  
 
 2. Create virtual environment  
